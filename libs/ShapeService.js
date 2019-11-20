@@ -167,8 +167,8 @@ const ShapeService = function() {
      * @return {number[]}   グリッド内座標
      */
     ShapeService.prototype.getGridPointOnLine = function(startPoint, targetPoint, gridInfo) {
-        if (gridInfo['xArea']['min'] > targetPoint[0] || targetPoint[0] > gridInfo['xArea']['max']
-            || gridInfo['yArea']['min'] > targetPoint[1] || targetPoint[1] > gridInfo['yArea']['max']) {
+        if (gridInfo['xArea']['min'] -50> targetPoint[0] || targetPoint[0] > gridInfo['xArea']['max'] +50
+            || gridInfo['yArea']['min'] -50> targetPoint[1] || targetPoint[1] > gridInfo['yArea']['max'] +50) {
             // グリッド範囲外の場合、スタート地点と指定地点を結ぶ点とグリット外線の交点を返す
             for (let i = 0; i < gridInfo['vertex'].length; i++) {
                 let nextIdx = i + 1;
